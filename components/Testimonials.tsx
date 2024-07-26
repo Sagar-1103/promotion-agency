@@ -20,7 +20,7 @@ const testimonials = [
   },
   {
     name: "Sam Wilson",
-    quote: "Couldn't be happier with the results.",
+    quote: "Couldnt be happier with the results.",
     role: "Freelancer",
     image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
   },
@@ -109,7 +109,7 @@ const TestimonialSlider = () => {
             >
               <Image src={testimonial.image} alt={testimonial.name} width={128} height={128} className="w-32 h-32 object-cover rounded-l-lg" />
               <div className="p-4 flex flex-col justify-center">
-                <p className="text-lg italic text-gray-900 dark:text-gray-100">"{testimonial.quote}"</p>
+                <p className="text-lg italic text-gray-900 dark:text-gray-100">&quot;{testimonial.quote}&quot;</p>
                 <div className="mt-4">
                   <p className="font-semibold text-teal-500">{testimonial.name}</p>
                   <p className="text-gray-500 dark:text-gray-400">{testimonial.role}</p>

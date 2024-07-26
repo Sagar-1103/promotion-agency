@@ -46,10 +46,10 @@ const AboutSection = () => {
             Our journey began in a small office in 2010 with a mission to revolutionize brand engagement on YouTube. Fueled by passion and innovation, our founders set out to create a comprehensive YouTube management and promotion solution.
           </p>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            From a two-person team, we’ve grown into a company with experts in YouTube SEO, video production, marketing, and management. We've helped clients from startups to large corporations achieve their unique goals.
+            From a two-person team, we’ve grown into a company with experts in YouTube SEO, video production, marketing, and management. We&apos;ve helped clients from startups to large corporations achieve their unique goals.
           </p>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Our commitment to excellence and creativity drives our success. We amplify each brand's voice through strategic solutions, optimizing video content and crafting compelling stories. Join us in telling your story to the world.
+            Our commitment to excellence and creativity drives our success. We amplify each brand&apos;s voice through strategic solutions, optimizing video content and crafting compelling stories. Join us in telling your story to the world.
           </p>
         </motion.div>
 

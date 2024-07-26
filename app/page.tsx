@@ -1,5 +1,5 @@
 import AboutSection from "@/components/About";
-import CTASection from "@/components/CTASection";
+import { BackgroundBeamsDemo } from "@/components/Background";
 import {HeroParallaxDemo} from "@/components/HeroSection";
 import { AnimatedPinDemo } from "@/components/ServiceCard";
 import Services from "@/components/Services";
@@ -13,7 +13,7 @@ export default function Home() {
       {/* <AnimatedPinDemo/> */}
       <Services/>
       <AboutSection/>
-      <CTASection/>
+      <BackgroundBeamsDemo/>
     </main>
   );
 }

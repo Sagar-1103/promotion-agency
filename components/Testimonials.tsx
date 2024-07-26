@@ -1,11 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
+import React from 'react';
+import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
 import Image from 'next/image';
 import "pure-react-carousel/dist/react-carousel.es.css";
-import { useMediaQuery } from 'react-responsive';
 
 const testimonials = [
   {
@@ -52,29 +50,7 @@ const testimonials = [
   }
 ];
 
-const carouselItemVariants = {
-  hidden: { opacity: 0, x: -100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-};
-
 const TestimonialSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-    }, 5000); // Change slide every 5 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Responsive breakpoints
-  const isMobile = useMediaQuery({ query: '(max-width: 640px)' }); // Small screens (sm)
-  const isTablet = useMediaQuery({ query: '(max-width: 768px)' }); // Medium screens (md)
-
-  // Determine number of visible slides
-  const visibleSlides = isMobile ? 1 : isTablet ? 2 : 3;
-
   return (
     <div className="w-full px-4 py-8 mx-auto max-w-screen-lg">
       <h2 className="text-4xl font-bold mb-4 text-center dark:text-white text-black">
@@ -87,22 +63,17 @@ const TestimonialSlider = () => {
         naturalSlideWidth={100}
         naturalSlideHeight={125}
         totalSlides={testimonials.length}
-        visibleSlides={visibleSlides} // Responsive slides
+        visibleSlides={1} // Default number of visible slides
         step={1}
         isIntrinsicHeight
         infinite // Enable infinite scrolling
         className="relative"
       >
-        <Slider className="relative">
+        <Slider>
           {testimonials.map((testimonial, index) => (
             <Slide index={index} key={index}>
-              <motion.div
-                className="p-4"
-                variants={carouselItemVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                <div className="flex flex-col items-center justify-center bg-gray-200 py-6 dark:bg-gray-800 shadow-lg rounded-lg h-full px-4">
+              <div className="p-4">
+                <div className="flex flex-col items-center justify-center bg-white dark:bg-gray-800 shadow-lg rounded-lg h-full p-4">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
@@ -116,14 +87,28 @@ const TestimonialSlider = () => {
                     <p className="text-gray-500 dark:text-gray-400">{testimonial.role}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </Slide>
           ))}
         </Slider>
-        <div className="absolute bottom-0 w-full flex justify-center">
-          <DotGroup />
+        <div className="flex justify-center mt-4">
+          {/* Add pagination dots */}
         </div>
       </CarouselProvider>
+      {/* Tailwind CSS for responsive design */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .carousel-provider {
+            --visible-slides: 2; // Show 2 slides on medium screens
+          }
+        }
+
+        @media (max-width: 640px) {
+          .carousel-provider {
+            --visible-slides: 1; // Show 1 slide on small screens
+          }
+        }
+      `}</style>
     </div>
   );
 };

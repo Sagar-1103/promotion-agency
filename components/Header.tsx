@@ -56,21 +56,21 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="hidden md:flex space-x-8 items-center">
-            <Link href="/#services" passHref>
+            <Link href="#services" passHref>
               <p
                 className="text-gray-900 dark:text-gray-200 hover:text-teal-500 transition duration-150"
               >
                 Services
               </p>
             </Link>
-            <Link href="/#testimonials" passHref>
+            <Link href="#testimonials" passHref>
               <p
                 className="text-gray-900 dark:text-gray-200 hover:text-teal-500 transition duration-150"
               >
                 Testimonials
               </p>
             </Link>
-            <Link href="/#about" passHref>
+            <Link href="#about" passHref>
               <p
                 className="text-gray-900 dark:text-gray-200 hover:text-teal-500 transition duration-150"
               >

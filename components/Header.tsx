@@ -44,9 +44,9 @@ const Navbar = () => {
         boxShadow: 'rgba(0, 0, 0, 0.25) 2px 2px 12px 2px',
         backdropFilter: 'blur(3.5px)',
       }}
-      className="fixed top-4 left-4 right-4 bg-transparent shadow-lg rounded-lg backdrop-filter backdrop-blur-2xl z-50"
+      className="fixed top-4 min-w-[55%] md:w-[600px] mx-auto left-4 right-4 bg-transparent shadow-lg rounded-lg backdrop-filter backdrop-blur-2xl z-50"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" passHref>

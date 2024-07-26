@@ -67,7 +67,7 @@ const AboutSection = () => {
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
             Meet Our Team
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
                     <div key={index} className="max-w-xs w-full group/card">
                       <div

@@ -20,7 +20,7 @@ const testimonials = [
   },
   {
     name: "Sam Wilson",
-    quote: "Couldnt be happier with the results.",
+    quote: "Couldn't be happier with the results.",
     role: "Freelancer",
     image: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
   },
@@ -51,7 +51,7 @@ const testimonials = [
 ];
 
 const variants = {
-  enter: (direction:number) => ({
+  enter: (direction: number) => ({
     x: direction > 0 ? 1000 : -1000,
     opacity: 0
   }),
@@ -60,7 +60,7 @@ const variants = {
     x: 0,
     opacity: 1
   },
-  exit: (direction:number) => ({
+  exit: (direction: number) => ({
     zIndex: 0,
     x: direction < 0 ? 1000 : -1000,
     opacity: 0
@@ -69,10 +69,10 @@ const variants = {
 
 const TestimonialSlider = () => {
   const [page, setPage] = useState(0);
-  const itemsPerPage = 3;
+  const [itemsPerPage, setItemsPerPage] = useState(1);
 
-  const paginate = (newDirection:number) => {
-    setPage((prev) => (prev + newDirection + testimonials.length) % testimonials.length);
+  const paginate = (newDirection: number) => {
+    setPage((prev) => (prev + newDirection + Math.ceil(testimonials.length / itemsPerPage)) % Math.ceil(testimonials.length / itemsPerPage));
   };
 
   useEffect(() => {
@@ -81,16 +81,32 @@ const TestimonialSlider = () => {
     }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
+  }, [itemsPerPage]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setItemsPerPage(3);
+      } else if (window.innerWidth >= 768) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(1);
+      }
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const displayedTestimonials = [
-    testimonials[page % testimonials.length],
-    testimonials[(page + 1) % testimonials.length],
-    testimonials[(page + 2) % testimonials.length]
-  ];
+  const displayedTestimonials = [];
+  for (let i = 0; i < itemsPerPage; i++) {
+    displayedTestimonials.push(testimonials[(page * itemsPerPage + i) % testimonials.length]);
+  }
 
   return (
-    <div className="relative flex flex-col justify-center items-center overflow-hidden w-[80%] mx-auto h-96">
+    <div className="relative flex flex-col justify-center items-center overflow-hidden w-[90%] mx-auto h-96">
       <AnimatePresence initial={false} custom={page}>
         <motion.div
           key={page}
@@ -100,15 +116,17 @@ const TestimonialSlider = () => {
           animate="center"
           exit="exit"
           transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
-          className="absolute flex w-full space-x-4 px-4"
+          className="absolute flex space-x-4 px-4 w-full h-full"
         >
           {displayedTestimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex-1 flex p-4 bg-white dark:bg-gray-800 shadow-lg rounded-lg mx-2"
+              className="flex-1 flex p-4 h-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg mx-2 flex-col items-center justify-center lg:flex-row lg:items-start"
             >
-              <Image src={testimonial.image} alt={testimonial.name} width={128} height={128} className="w-32 h-32 object-cover rounded-l-lg" />
-              <div className="p-4 flex flex-col justify-center">
+              <div className="flex-shrink-0">
+                <Image src={testimonial.image} alt={testimonial.name} width={128} height={128} className="w-32 h-32 object-cover rounded-full mb-4 lg:mb-0 lg:mr-4" />
+              </div>
+              <div className="text-center lg:text-left">
                 <p className="text-lg italic text-gray-900 dark:text-gray-100">&quot;{testimonial.quote}&quot;</p>
                 <div className="mt-4">
                   <p className="font-semibold text-teal-500">{testimonial.name}</p>

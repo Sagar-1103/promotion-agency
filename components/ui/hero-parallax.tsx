@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { TypewriterEffect } from "./typewriter-effect";
 
 export const HeroParallax = ({
   products,
@@ -101,11 +102,35 @@ export const HeroParallax = ({
   );
 };
 
+const words = [
+  {
+    text: "Your",
+  },
+  {
+    text: "Partner",
+  },
+  {
+    text: "for",
+  },
+  {
+    text: "YouTube",
+    className: "text-blue-700 dark:text-blue-500",
+  },
+  {
+    text: "Channel",
+    className: "text-blue-700 dark:text-blue-500",
+  },
+  {
+    text: "Success.",
+    className: "text-blue-700 dark:text-blue-500",
+  },
+];
+
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 px-4 w-full left-0 top-0">
-      <h1 className="text-4xl md:text-7xl font-bold dark:text-white">
-        Your Partner for YouTube Channel Success
+      <h1 className="text-4xl max-w-5xl md:text-7xl font-bold dark:text-white">
+      <TypewriterEffect words={words}/>
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
         Elevate your YouTube presence with our comprehensive management and promotion services. From expert SEO and high-quality video creation to strategic promotion and channel management, we help brands and businesses achieve outstanding growth and engagement on YouTube.

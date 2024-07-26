@@ -1,81 +1,107 @@
-"use client";
+'use client';
 
-import { LocateFixedIcon } from "lucide-react";
-import Link from "next/link";
-import { myProjects } from "@/data/index";
-import { PinContainer } from "./ui/Pin";
+import { motion, useAnimation, useInView } from 'framer-motion';
+import { Search, Video, Megaphone, Settings } from 'lucide-react'; // Import Lucide React icons
+import { useRef } from 'react';
 
-const RecentProjects = () => {
+const services = [
+  {
+    title: 'YouTube SEO',
+    description: 'Optimize your videos for better search visibility and higher rankings on YouTube.',
+    benefits: 'Increase video views, attract more subscribers, improve engagement.',
+    icon: <Search className="h-8 w-8 text-teal-500" />
+  },
+  {
+    title: 'Video Creation',
+    description: 'Professional video production to create engaging and high-quality content.',
+    benefits: 'High-quality visuals, compelling storytelling, enhanced brand image.',
+    icon: <Video className="h-8 w-8 text-teal-500" />
+  },
+  {
+    title: 'Promotion',
+    description: 'Promote your videos to reach a wider audience and grow your channel.',
+    benefits: 'Boost views, attract new subscribers, increase brand awareness.',
+    icon: <Megaphone className="h-8 w-8 text-teal-500" />
+  },
+  {
+    title: 'Management',
+    description: 'Efficient management of your YouTube channel to keep it running smoothly.',
+    benefits: 'Time-saving, consistent content scheduling, strategic planning.',
+    icon: <Settings className="h-8 w-8 text-teal-500" />
+  }
+];
+
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  benefits: string;
+  icon: any;
+}
+
+const ServiceCard = ({ service }:any) => {
   return (
-    <div className="pt-20 pb-10">
-      <h1 className="heading">
-        My <span className="text-purple">Recent Projects</span>
-      </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
-        {myProjects.map((item) => (
-          <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
-            key={item.id}
-          >
-            <PinContainer title={item.title} href={item.link}>
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162D" }}
-                >
-                  <img src="/bg.png" alt="bgimg" />
-                </div>
-                <img
-                  src={item.img}
-                  alt="cover"
-                  className="z-10 object-fill absolute bottom-0"
-                />
-              </div>
-
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                {item.title}
-              </h1>
-
-              <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-                style={{
-                  color: "#BEC1DD",
-                  margin: "1vh 0",
-                }}
-              >
-                {item.des}
-              </p>
-
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {item.iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
-                    >
-                      <img src={icon} alt="icon5" className="p-2" />
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex justify-center items-center">
-                  <Link href={item.link} target={"_blank"}>
-                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                      Check Live Site
-                      <LocateFixedIcon className="ms-3" color="#CBACF9" />
-                    </p>
-                  </Link>
-                </div>
-              </div>
-            </PinContainer>
-          </div>
-        ))}
+    <motion.div
+      className="bg-gray-200 dark:bg-gray-800 shadow-lg rounded-2xl px-6 py-10 flex flex-col items-center space-y-4"
+      whileHover={{
+        scale: 1.05,
+        y: -10,
+        boxShadow: "0 15px 30px rgba(0, 0, 0, 0.2)",
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
+    >
+      <div className="text-4xl">
+        {service.icon}
       </div>
-    </div>
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+        {service.title}
+      </h3>
+      <p className="text-gray-700 dark:text-gray-300">
+        {service.description}
+      </p>
+      <p className="text-teal-500">
+        {service.benefits}
+      </p>
+    </motion.div>
   );
 };
 
-export default RecentProjects;
+const ServicesSection = () => {
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true }); // Trigger only once
+
+  // Trigger animation when the section is in view
+  if (inView) {
+    controls.start({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: 'easeOut',
+        staggerChildren: 0.2,
+        delayChildren: 0.2
+      }
+    });
+  }
+
+  return (
+    <section ref={ref} className="py-16 bg-white dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 text-center mb-12">
+          Our Services
+        </h2>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={controls}
+        >
+          {services.map((service) => (
+            <ServiceCard key={service.title} service={service} />
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default ServicesSection;

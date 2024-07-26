@@ -1,3 +1,5 @@
+import AboutSection from "@/components/About";
+import CTASection from "@/components/CTASection";
 import {HeroParallaxDemo} from "@/components/HeroSection";
 import { AnimatedPinDemo } from "@/components/ServiceCard";
 import Services from "@/components/Services";
@@ -9,6 +11,9 @@ export default function Home() {
     <main>
       <HeroParallaxDemo/>
       {/* <AnimatedPinDemo/> */}
+      <Services/>
+      <AboutSection/>
+      <CTASection/>
     </main>
   );
 }

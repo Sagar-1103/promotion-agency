@@ -1,87 +1,144 @@
-// src/components/Header.tsx
-"use client";
+'use client';
 
-import React, { useState } from 'react';
-import { Menu } from 'lucide-react'; // Importing the User and Menu icons from Lucide React
-import { motion } from 'framer-motion'; // Importing Framer Motion for animations
-import Sidebar from './Sidebar'; // Importing the Sidebar component
-import Image from 'next/image';
-import logo from '../assets/logo.png'; // Adjust the path to your logo image
+import { useState, useEffect } from 'react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
-const Header = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+  useEffect(() => {
+    // Check if dark mode is enabled in localStorage
+    const storedDarkMode = localStorage.getItem('darkMode') === 'true';
+    setDarkMode(storedDarkMode);
+
+    if (storedDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
-  const navItems = ['Home', 'All Products', 'Blog', 'About Us', 'Contact Us', 'FAQs'];
+  const toggleDarkMode = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    localStorage.setItem('darkMode', newDarkMode.toString());
+
+    if (newDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
 
   return (
-    <>
-      <header className="flex items-center justify-between px-8 py-4 bg-gray-900 shadow-md backdrop-filter backdrop-blur-lg border-b border-gray-700">
-        <Image src={logo} alt="Logo" className="h-14 w-14" />
-        <motion.nav
-          className="hidden md:flex space-x-8"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0, y: -20 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                delayChildren: 0.3,
-                staggerChildren: 0.2,
-              },
-            },
-          }}
-        >
-          {navItems.map((item, index) => (
-            <motion.p
-              key={item}
-              className="text-gray-300 hover:text-gray-400 font-bold text-lg relative group cursor-pointer"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
+    <nav className="fixed top-4 left-4 right-4 bg-gray-900 bg-opacity-90 dark:bg-gray-900 dark:bg-opacity-80 shadow-lg rounded-lg backdrop-filter backdrop-blur-lg z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
+          <div className="flex-shrink-0 flex items-center">
+            <Link href="/">
+              <p className="text-xl font-bold text-white dark:text-white">
+                Company
+              </p>
+            </Link>
+          </div>
+          <div className="hidden md:flex space-x-8 items-center">
+            <Link href="/services">
+              <p className="text-white dark:text-white hover:text-teal-500 transition duration-150">
+                Services
+              </p>
+            </Link>
+            <Link href="/pricing">
+              <p className="text-white dark:text-white hover:text-teal-500 transition duration-150">
+                Pricing
+              </p>
+            </Link>
+            <Link href="/about">
+              <p className="text-white dark:text-white hover:text-teal-500 transition duration-150">
+                About Us
+              </p>
+            </Link>
+            <Link href="/contact">
+              <p className="text-white dark:text-white hover:text-teal-500 transition duration-150">
+                Contact
+              </p>
+            </Link>
+            <button
+              onClick={toggleDarkMode}
+              className="text-white dark:text-white hover:text-teal-500 transition duration-150"
             >
-              {item}
-              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gray-600 group-hover:w-full transition-all"></span>
-            </motion.p>
-          ))}
-        </motion.nav>
-        <motion.div
-          className="hidden md:flex items-center space-x-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <motion.button
-            className="flex items-center px-6 py-2 text-white bg-gray-700 rounded-md hover:bg-gray-800 transition"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+              {darkMode ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
+            </button>
+          </div>
+          <div className="flex items-center md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="text-white dark:text-white hover:text-teal-500 transition duration-150"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="md:hidden bg-gray-700 bg-opacity-80 dark:bg-gray-800 dark:bg-opacity-80 backdrop-filter backdrop-blur-lg"
           >
-            <span>Create a Listing</span>
-          </motion.button>
-        </motion.div>
-        <motion.div
-          className="md:hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <Menu
-            className="w-6 h-6 text-gray-300 cursor-pointer"
-            onClick={toggleSidebar}
-          />
-        </motion.div>
-      </header>
-      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-    </>
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {['Services', 'Pricing', 'About Us', 'Contact'].map((text, index) => (
+                <motion.div
+                  key={text}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{
+                    delay: index * 0.1, // Stagger delay
+                    duration: 0.3,
+                    ease: "easeOut"
+                  }}
+                >
+                  <Link href={`/${text.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <p className="block text-white dark:text-white hover:text-teal-500 transition duration-150 px-3 py-2 rounded-md text-base font-medium">
+                      {text}
+                    </p>
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{
+                  delay: 0.4, // Additional delay for the dark mode toggle button
+                  duration: 0.3,
+                  ease: "easeOut"
+                }}
+              >
+                <button
+                  onClick={toggleDarkMode}
+                  className="block text-white dark:text-white hover:text-teal-500 transition duration-150 px-3 py-2 rounded-md text-base font-medium"
+                >
+                  {darkMode ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
+                </button>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
 
-export default Header;
+export default Navbar;

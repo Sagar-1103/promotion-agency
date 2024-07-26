@@ -69,7 +69,7 @@ const AboutSection = () => {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
-                    <div className="max-w-xs w-full group/card">
+                    <div key={index} className="max-w-xs w-full group/card">
                       <div
                         className={cn(
                           "cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl  max-w-sm mx-auto backgroundImage flex flex-col justify-between p-4",

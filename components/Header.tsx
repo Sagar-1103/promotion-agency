@@ -38,40 +38,48 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-4 left-4 right-4 bg-gray-900 bg-opacity-90 dark:bg-gray-900 dark:bg-opacity-80 shadow-lg rounded-lg backdrop-filter backdrop-blur-lg z-50">
+    <nav
+    style={{
+      background: 'linear-gradient(271.1deg, rgba(169, 204, 236, 0.2) 37.05%, rgba(90, 125, 154, 0.13) 66.11%)',
+      boxShadow: 'rgba(0, 0, 0, 0.25) 2px 2px 12px 2px',
+      backdropFilter: 'blur(3.5px)',
+    }}
+    className="fixed top-4 left-4 right-4 bg-transparent shadow-lg rounded-lg backdrop-filter backdrop-blur-2xl z-50"
+  >
+  
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/">
-              <p className="text-xl font-bold text-white dark:text-white">
+              <p className="text-xl font-bold text-gray-900 dark:text-gray-200">
                 Company
               </p>
             </Link>
           </div>
           <div className="hidden md:flex space-x-8 items-center">
             <Link href="/services">
-              <p className="text-white dark:text-white hover:text-teal-500 transition duration-150">
+              <p className=" text-gray-900 dark:text-gray-200 hover:text-teal-500 transition duration-150">
                 Services
               </p>
             </Link>
             <Link href="/pricing">
-              <p className="text-white dark:text-white hover:text-teal-500 transition duration-150">
+              <p className=" text-gray-900 dark:text-gray-200 hover:text-teal-500 transition duration-150">
                 Pricing
               </p>
             </Link>
             <Link href="/about">
-              <p className="text-white dark:text-white hover:text-teal-500 transition duration-150">
+              <p className=" text-gray-900 dark:text-gray-200 hover:text-teal-500 transition duration-150">
                 About Us
               </p>
             </Link>
             <Link href="/contact">
-              <p className="text-white dark:text-white hover:text-teal-500 transition duration-150">
+              <p className=" text-gray-900 dark:text-gray-200 hover:text-teal-500 transition duration-150">
                 Contact
               </p>
             </Link>
             <button
               onClick={toggleDarkMode}
-              className="text-white dark:text-white hover:text-teal-500 transition duration-150"
+              className=" text-gray-900 dark:text-gray-200 hover:text-teal-500 transition duration-150"
             >
               {darkMode ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
             </button>

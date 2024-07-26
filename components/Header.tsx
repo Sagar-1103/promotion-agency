@@ -42,7 +42,7 @@ const Navbar = () => {
       style={{
         background: 'linear-gradient(271.1deg, rgba(169, 204, 236, 0.2) 37.05%, rgba(90, 125, 154, 0.13) 66.11%)',
         boxShadow: 'rgba(0, 0, 0, 0.25) 2px 2px 12px 2px',
-        backdropFilter: 'blur(3.5px)',
+        backdropFilter: 'blur(5px)',
       }}
       className="fixed top-4 min-w-[55%] md:w-[600px] mx-auto left-4 right-4 bg-transparent shadow-lg rounded-lg backdrop-filter backdrop-blur-2xl z-50"
     >

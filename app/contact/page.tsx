@@ -15,7 +15,7 @@ const ContactPage = () => {
         {/* Left Section */}
         <div className="p-8 bg-gray-50 dark:bg-gray-900 flex flex-col justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-teal-500 mb-4">Let's get in touch</h2>
+            <h2 className="text-2xl font-bold text-teal-500 mb-4">Let&apos;s get in touch</h2>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
               Lorem ipsum dolor sit amet consectetur adipiscing elit. Saepe dolorum adipisci recusandae praesentium dicta!
             </p>

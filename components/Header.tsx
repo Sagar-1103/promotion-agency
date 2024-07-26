@@ -62,7 +62,7 @@ const Navbar = () => {
               </p>
             </Link>
           </div>
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden md:flex space-x-8 font-medium items-center">
             <Link href="/#services" passHref>
               <p
                 onClick={closeMenu}

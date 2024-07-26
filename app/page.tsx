@@ -23,7 +23,7 @@ export default function Home() {
         </div>
       </section>
         <section id="background" className="py-16">
-          {/* <BackgroundBeamsDemo /> */}
+          <BackgroundBeamsDemo />
         </section>
       </main>
     </>

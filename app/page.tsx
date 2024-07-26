@@ -17,14 +17,14 @@ export default function Home() {
         <section id="about" className="py-16">
           <AboutSection />
         </section>
-        <section id="testimonials" className="py-16 bg-gray-100 dark:bg-neutral-950">
+        <section id="testimonials" className="py-16 ">
         <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white">What Our Clients Say</h2>
         <div className="mt-8">
           <TestimonialSlider />
         </div>
       </section>
         <section id="background" className="py-16">
-          {/* <BackgroundBeamsDemo /> */}
+          <BackgroundBeamsDemo />
         </section>
       </main>
     </>

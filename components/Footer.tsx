@@ -15,7 +15,7 @@ const Footer = () => {
                   <Mail className="text-teal-500 mx-4" size={32} />
                   Stay Updated!
                 </h2>
-                <p className="mt-4 text-gray-400 dark:text-gray-300">
+                <p className="mt-4 text-gray-400 px-5 dark:text-gray-300">
                   Get the latest news, tips, and exclusive offers delivered right to your inbox.
                 </p>
               </div>
@@ -43,111 +43,116 @@ const Footer = () => {
               </form>
             </div>
 
-            <div className="col-span-2 sm:col-span-1">
+            <div className="col-span-2 px-5 sm:col-span-1">
               <p className="font-medium text-teal-400 dark:text-teal-300">Services</p>
               <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <Link href="/coaching" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                {/* <li>
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     1-on-1 Coaching
                   </Link>
-                </li>
+                </li> */}
                 <li>
-                  <Link href="/reviews" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Company Review
                   </Link>
                 </li>
                 <li>
-                  <Link href="/accounts" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    Accounts Review
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                    Channel Review
                   </Link>
                 </li>
-                <li>
-                  <Link href="/consulting" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                {/* <li>
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     HR Consulting
                   </Link>
-                </li>
-                <li>
-                  <Link href="/seo" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                </li> */}
+                {/* <li>
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     SEO Optimization
+                  </Link>
+                </li> */}
+                <li>
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                    Promotion Consultancy
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <div className="col-span-2 sm:col-span-1">
+            <div className="col-span-2 px-5 sm:col-span-1">
               <p className="font-medium text-teal-400 dark:text-teal-300">Company</p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
-                  <Link href="/about" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/team" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Our Team
                   </Link>
                 </li>
                 <li>
-                  <Link href="/partners" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Partners
                   </Link>
                 </li>
                 <li>
-                  <Link href="/careers" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Careers
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <div className="col-span-2 sm:col-span-1">
+            <div className="col-span-2 px-5 sm:col-span-1">
               <p className="font-medium text-teal-400 dark:text-teal-300">Helpful Links</p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
-                  <Link href="/contact" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/faq" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     FAQ
                   </Link>
                 </li>
                 <li>
-                  <Link href="/live-chat" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Live Chat
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <div className="col-span-2 sm:col-span-1">
+            <div className="col-span-2 px-5 sm:col-span-1">
               <p className="font-medium text-teal-400 dark:text-teal-300">Legal</p>
               <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <Link href="/accessibility" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                {/* <li>
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Accessibility
                   </Link>
-                </li>
+                </li> */}
                 <li>
-                  <Link href="/returns-policy" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    Returns Policy
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                      Terms and services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/refund-policy" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Refund Policy
                   </Link>
                 </li>
-                <li>
-                  <Link href="/hiring-statistics" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
+                {/* <li>
+                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Hiring Statistics
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
 
-            <div className="col-span-2 sm:col-span-1">
+            {/* <div className="col-span-2 sm:col-span-1">
               <p className="font-medium text-teal-400 dark:text-teal-300">Downloads</p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
@@ -161,7 +166,7 @@ const Footer = () => {
                   </Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
 

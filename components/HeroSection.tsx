@@ -101,7 +101,7 @@ export const products = [
     title: "",
     link: "/",
     thumbnail:
-    Y2,
+    Y7,
   },
   {
     title: "",

@@ -47,11 +47,7 @@ const Footer = () => {
             <div className="col-span-2 px-5 sm:col-span-1">
               <p className="font-medium text-teal-400 dark:text-teal-300">Services</p>
               <ul className="mt-6 space-y-4 text-sm">
-                {/* <li>
-                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    1-on-1 Coaching
-                  </Link>
-                </li> */}
+                
                 <li>
                   <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Company Review
@@ -62,16 +58,7 @@ const Footer = () => {
                     Channel Review
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    HR Consulting
-                  </Link>
-                </li> */}
-                {/* <li>
-                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    SEO Optimization
-                  </Link>
-                </li> */}
+               
                 <li>
                   <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Promotion Consultancy
@@ -88,11 +75,7 @@ const Footer = () => {
                     About Us
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    Our Team
-                  </Link>
-                </li> */}
+               
                 <li>
                   <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Partners
@@ -106,35 +89,12 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* <div className="col-span-2 px-5 sm:col-span-1">
-              <p className="font-medium text-teal-400 dark:text-teal-300">Helpful Links</p>
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    Live Chat
-                  </Link>
-                </li>
-              </ul>
-            </div> */}
+            
 
             <div className="col-span-2 px-5 sm:col-span-1">
               <p className="font-medium text-teal-400 dark:text-teal-300">Legal</p>
               <ul className="mt-6 space-y-4 text-sm">
-                {/* <li>
-                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    Accessibility
-                  </Link>
-                </li> */}
+                
                 <li>
                   <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                       Terms and services
@@ -145,29 +105,11 @@ const Footer = () => {
                     Refund Policy
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    Hiring Statistics
-                  </Link>
-                </li> */}
+                
               </ul>
             </div>
 
-            {/* <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-teal-400 dark:text-teal-300">Downloads</p>
-              <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <Link href="/calendar" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    Marketing Calendar
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/infographics" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
-                    Infographics
-                  </Link>
-                </li>
-              </ul>
-            </div> */}
+            
           </div>
         </div>
 

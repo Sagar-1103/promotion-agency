@@ -17,11 +17,6 @@ export default function Home() {
         <section id="about" className="py-16">
           <AboutSection />
         </section>
-        <section id="testimonials" className="py-16 ">
-        <div className="mt-8">
-          <TestimonialSlider />
-        </div>
-      </section>
         <section id="background" className="py-16">
           <BackgroundBeamsDemo />
         </section>

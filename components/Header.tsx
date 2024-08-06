@@ -71,14 +71,7 @@ const Navbar = () => {
                 Services
               </p>
             </Link>
-            <Link href="/#testimonials" passHref>
-              <p
-                onClick={closeMenu}
-                className="text-gray-900 dark:text-gray-200 hover:text-teal-500 transition duration-150"
-              >
-                Testimonials
-              </p>
-            </Link>
+            
             <Link href="/#about" passHref>
               <p
                 onClick={closeMenu}
@@ -158,7 +151,7 @@ const Navbar = () => {
             className="md:hidden bg-transparent overflow-hidden"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {["Services", "Testimonials", "About", "Contact"].map(
+              {["Services", "About", "Contact"].map(
                 (text, index) => (
                   <motion.div
                     key={text}

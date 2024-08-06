@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="mx-auto w-full px-4 py-16 sm:px-6 lg:px-8">
         <div className="lg:flex lg:items-start lg:gap-8 justify-center">
 
-          <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
-            <div className="col-span-2">
-              <div>
+          <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 mx-auto align-middle lg:gap-y-16">
+            <div className="col-span-2 mx-auto">
+              <div className='mx-auto'>
                 <h2 className="text-3xl font-extrabold flex items-center text-white dark:text-gray-100">
                   <Mail className="text-teal-500 mx-4" size={32} />
                   Stay Updated!
@@ -42,6 +42,7 @@ const Footer = () => {
                 </div>
               </form>
             </div>
+            
 
             <div className="col-span-2 px-5 sm:col-span-1">
               <p className="font-medium text-teal-400 dark:text-teal-300">Services</p>
@@ -87,11 +88,11 @@ const Footer = () => {
                     About Us
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Our Team
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="/" className="text-gray-300 hover:text-teal-400 dark:text-gray-400 dark:hover:text-teal-300 transition">
                     Partners
@@ -105,7 +106,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-span-2 px-5 sm:col-span-1">
+            {/* <div className="col-span-2 px-5 sm:col-span-1">
               <p className="font-medium text-teal-400 dark:text-teal-300">Helpful Links</p>
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
@@ -124,7 +125,7 @@ const Footer = () => {
                   </Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
 
             <div className="col-span-2 px-5 sm:col-span-1">
               <p className="font-medium text-teal-400 dark:text-teal-300">Legal</p>

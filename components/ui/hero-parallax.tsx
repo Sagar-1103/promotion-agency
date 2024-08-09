@@ -103,14 +103,30 @@ export const HeroParallax = ({
 };
 
 const words = [
+  //Your Strategic Partner for Business Growth and YouTube Channel Success.
   {
     text: "Your",
+  },
+  {
+    text: "Strategic",
   },
   {
     text: "Partner",
   },
   {
     text: "for",
+  },
+  {
+    text: "Business",
+    className: "text-blue-700 dark:text-blue-500",
+  },
+  {
+    text: "Growth",
+    className: "text-blue-700 dark:text-blue-500",
+  },
+  {
+    text: "and",
+    className: "text-blue-700 dark:text-blue-500",
   },
   {
     text: "YouTube",
@@ -133,7 +149,7 @@ export const Header = () => {
       <TypewriterEffect words={words}/>
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        Elevate your YouTube presence with our comprehensive management and promotion services. From expert SEO and high-quality video creation to strategic promotion and channel management, we help brands and businesses achieve outstanding growth and engagement on YouTube.
+      Elevate your business with strategic planning, brand development, and expert operational support to drive growth. For YouTube, we offer tailored SEO, video production, and promotion services to expand your brand's reach and engagement.
       </p>
     </div>
   );

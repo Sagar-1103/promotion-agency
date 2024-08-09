@@ -16,17 +16,14 @@ const AboutSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-          <h3 className="text-2xl font-semibold -mt-4 text-gray-900 dark:text-gray-100 mb-4">
+          {/* <h3 className="text-2xl font-semibold -mt-4 text-gray-900 dark:text-gray-100 mb-4">
             Our Story
-          </h3>
+          </h3> */}
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            Our journey began in a small office in 2010 with a mission to revolutionize brand engagement on YouTube. Fueled by passion and innovation, our founders set out to create a comprehensive YouTube management and promotion solution.
+          Exceed IT Services was founded in 2001 by a team of talented and achievement oriented professionals. Over the years, we set our headquarters in Abu Dhabi – UAE and branched out to the rest of the GCC. Our service profile focuses on providing specialized IT services and exceptional IT consultancy to organizations within various sectors.
           </p>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-            From a two-person team, we’ve grown into a company with experts in YouTube SEO, video production, marketing, and management. We&apos;ve helped clients from startups to large corporations achieve their unique goals.
-          </p>
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Our commitment to excellence and creativity drives our success. We amplify each brand&apos;s voice through strategic solutions, optimizing video content and crafting compelling stories. Join us in telling your story to the world.
+          Exceed&apos;s Continuous growth stems from strategic clarity, effective leadership, staff competency and customer focus. We have grown from a single department providing training services to a multi-departmental company specialized in providing enterprise organizations with a complete set of solutions that cover their entire IT lifecycle.
           </p>
         </motion.div>
 

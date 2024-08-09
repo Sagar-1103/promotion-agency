@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import Link from 'next/link';
 
 const ContactPage = () => {
   return (
@@ -73,20 +74,20 @@ const ContactPage = () => {
           <div>
             <h2 className="text-2xl font-bold text-teal-500 mb-4">Let&apos;s get in touch</h2>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Lorem ipsum dolor sit amet consectetur adipiscing elit. Saepe dolorum adipisci recusandae praesentium dicta!
+            EXCEED IT Services and IT Consulting Abu Dhabi
             </p>
             <div className="space-y-4 mb-4">
               <div className="flex items-center">
                 <MapPin className="text-teal-500 mr-2" />
-                <p className="text-gray-700 dark:text-gray-300">92 Cherry Drive Uniondale, NY 11553</p>
+                <p className="text-gray-700 dark:text-gray-300">5th Floor West Tower, Abu Dhabi Mall, Al Zahiya (Tourist Club) Area, Abu Dhabi</p>
               </div>
               <div className="flex items-center">
                 <Mail className="text-teal-500 mr-2" />
-                <p className="text-gray-700 dark:text-gray-300">lorem@ipsum.com</p>
+                <p className="text-gray-700 dark:text-gray-300">info@exceedgulf.com</p>
               </div>
               <div className="flex items-center">
                 <Phone className="text-teal-500 mr-2" />
-                <p className="text-gray-700 dark:text-gray-300">123-456-789</p>
+                <p className="text-gray-700 dark:text-gray-300">+97126781100</p>
               </div>
             </div>
             <div className="mt-8">
@@ -102,10 +103,16 @@ const ContactPage = () => {
           <div>
             <p className="text-gray-700 dark:text-gray-300 my-4">Connect with us:</p>
             <div className="flex space-x-4">
+              <Link href={'https://www.facebook.com/exceedgulf/'}>
               <Facebook className="text-teal-500 cursor-pointer" />
-              <Twitter className="text-teal-500 cursor-pointer" />
+              </Link>
+              {/* <Twitter className="text-teal-500 cursor-pointer" /> */}
+              <Link href={'https://www.instagram.com/exceed_it_services'}>
               <Instagram className="text-teal-500 cursor-pointer" />
+              </Link>
+              <Link href={'https://www.linkedin.com/company/exceed-it-services'}>
               <Linkedin className="text-teal-500 cursor-pointer" />
+              </Link>
             </div>
           </div>
         </div>

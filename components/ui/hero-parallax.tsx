@@ -149,7 +149,7 @@ export const Header = () => {
       <TypewriterEffect words={words}/>
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-      Elevate your business with strategic planning, brand development, and expert operational support to drive growth. For YouTube, we offer tailored SEO, video production, and promotion services to expand your brand's reach and engagement.
+      Elevate your business with strategic planning, brand development, and expert operational support to drive growth. For YouTube, we offer tailored SEO, video production, and promotion services to expand your brand&apos;s reach and engagement.
       </p>
     </div>
   );

@@ -34,7 +34,7 @@ const serviceDetails: Record<ServiceCategory, string[]> = {
 const TabButton = ({ tab, activeTab, onClick }: { tab: ServiceCategory, activeTab: ServiceCategory, onClick: () => void }) => (
   <motion.button
     onClick={onClick}
-    className={`px-6 py-2 mx-2 text-lg font-semibold rounded-lg focus:outline-none ${
+    className={`px-2 sm:px-6 py-2 mx-2 text-base sm:text-lg font-semibold rounded-lg focus:outline-none ${
       activeTab === tab
         ? 'bg-teal-500 text-white'
         : 'bg-white dark:bg-gray-800 dark:text-gray-300 text-gray-600'
@@ -50,13 +50,13 @@ const TabButton = ({ tab, activeTab, onClick }: { tab: ServiceCategory, activeTa
 // Service Item Component
 const ServiceItem = ({ service, delay }: { service: string, delay: number }) => (
   <motion.li
-    className="flex items-center text-lg text-gray-700 dark:text-gray-200"
+    className="flex items-center text-base sm:text-lg text-gray-700 dark:text-gray-200"
     initial={{ opacity: 0, x: -20 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.3, delay }}
   >
     <svg
-      className="h-6 w-6 text-teal-500 mr-4"
+      className="h-5 w-5 sm:h-6 sm:w-6 text-teal-500 mr-4"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -84,10 +84,10 @@ export default function Services() {
 
   return (
     <div className="bg-gray-100 dark:bg-neutral-950 py-12 transition-colors duration-500">
-      <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0">
+      <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0 lg:space-x-8">
         {/* Left Side - Lottie Animation */}
         <motion.div 
-          className="lg:w-1/2 "
+          className="w-full lg:w-1/2"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
@@ -98,9 +98,9 @@ export default function Services() {
         </motion.div>
 
         {/* Right Side - Content */}
-        <div className="lg:w-1/2">
+        <div className="w-full lg:w-1/2">
           <motion.h2
-            className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-6"
+            className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4 sm:mb-6 text-center lg:text-left"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -108,7 +108,7 @@ export default function Services() {
             What We Offer
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-600 dark:text-gray-300 mb-8"
+            className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 text-center lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -117,7 +117,7 @@ export default function Services() {
           </motion.p>
 
           {/* Tab Navigation */}
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center lg:justify-start mb-6 p20 sm:mb-8">
             {Object.keys(serviceDetails).map((tab) => (
               <TabButton
                 key={tab}
@@ -130,12 +130,12 @@ export default function Services() {
 
           {/* Service List */}
           <motion.div
-            className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 transition-colors duration-500"
+            className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 sm:p-8 transition-colors duration-500"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
           >
-            <ul className="space-y-4">
+            <ul className="space-y-3 sm:space-y-4">
               {serviceDetails[activeTab].map((service, index) => (
                 <ServiceItem key={index} service={service} delay={index * 0.1} />
               ))}
